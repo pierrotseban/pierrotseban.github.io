@@ -1,75 +1,51 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet AgregPhilo</title>
-  <link rel="stylesheet" href="../styles.css">
-  <script src="main.js"></script>
-</head>
-<body data-page="agregphilo">
-  <div id="navbar-container"></div>
-  <script src="/js/navbar.js"></script>
-
-  <div style="margin-bottom: 100px";>
-    <h1>Le Projet AgregPhilo</h1>
+---
+layout: agregphilo
+title: Projet AgregPhilo
+id: agregphilo
+---
+<section>
+  <h2>Introduction</h2>
+  <section>
+    <h3>Pourquoi l'agrégation de philosophie ?</h3>
     <p>
-      Bienvenu dans le Projet AgregPhilo. Son but est d'agréger à terme l'ensemble des données publiques concernant l'agrégation de philosophie, dans une base Open Source.
+      L'agrégation de philosophie a une place importante dans l'histoire de la philosophie française du dernier siècle, et son rôle se fait encore sentir dans le présent.
+      Comme l'a montré notamment <a target="_blank" href="https://shs.cairn.info/histoire-de-l-agregation--978290821251X?lang=fr">André Chervel</a>, l'agrégation a joué
+      un rôle fondamental dans la formation de l'université française, sans équivalent dans les autres pays. Concours central de l'enseignement d'État, elle a bénéficié
+      d'une force et d'une persistance instutionnelle, ainsi que d'une exigence et d'une rigueur, dont les universités n'étaient pas dôtés en France - celles-ci ayant connu
+      un développement plus tardif que, notamment, en Allemagne. La chose est notamment vraie en philosophie, discipline qui, comme le montre bien 
+      <a target="_blank" href="https://www.cnrseditions.fr/catalogue/histoire/enseigner-la-philosophie/">Bruno Poucet</a>, a toujours eu une place privilégiée et singulière dans l'enseignement
+      secondaire français. L'agrégation a ainsi historiquement à la fois précédé et déterminé la consolidation des universités au XIXe siècle, les départements universitaires
+      de philosophie devant en partie aussi bien leur existence que leur forme à la nécessité constante de préparer les candidats à l'agrégation.
     </p>
-    <section>
-      <h2>Introduction</h2>
-      <section>
-        <h3>Pourquoi l'agrégation de philosophie ?</h3>
-        <p>
-          L'agrégation de philosophie a une place importante dans l'histoire de la philosophie française du dernier siècle, et son rôle se fait encore sentir dans le présent.
-          Comme l'a montré notamment <a target="_blank" href="https://shs.cairn.info/histoire-de-l-agregation--978290821251X?lang=fr">André Chervel</a>, l'agrégation a joué
-          un rôle fondamental dans la formation de l'université française, sans équivalent dans les autres pays. Concours central de l'enseignement d'État, elle a bénéficié
-          d'une force et d'une persistance instutionnelle, ainsi que d'une exigence et d'une rigueur, dont les universités n'étaient pas dôtés en France - celles-ci ayant connu
-          un développement plus tardif que, notamment, en Allemagne. La chose est notamment vraie en philosophie, discipline qui, comme le montre bien 
-          <a target="_blank" href="https://www.cnrseditions.fr/catalogue/histoire/enseigner-la-philosophie/">Bruno Poucet</a>, a toujours eu une place privilégiée et singulière dans l'enseignement
-          secondaire français. L'agrégation a ainsi historiquement à la fois précédé et déterminé la consolidation des universités au XIXe siècle, les départements universitaires
-          de philosophie devant en partie aussi bien leur existence que leur forme à la nécessité constante de préparer les candidats à l'agrégation.
-        </p>
-        <p>
-          La difficulté extrême du concours - du fait d'un nombre relativement restreint de places - et le prestige qui l'accompagne, en font aujourd'hui encore un passage presque 
-          obligé pour l'accès à l'université. Pour faire bref : les philosophes français d'importance, depuis plus d'un siècle, à n'être pas agrégé, ne sont pas si nombreux. De 
-          fait, comme l'a montré <a target="_blank" href="https://muse.jhu.edu/article/241097">Alan Schrift</a>, l'agrégation de philosophie a marqué les générations de philosophes 
-          du siècle dernier, mobilisant chaque année non seulement un contingent d'étudiant·es, mais aussi leurs professeurs, sollicités dans chaque université, ainsi que les 
-          éditeurs et spécialistes des œuvres au programme sommés de rapidement produire des synthèses ou des colloques thématiques, etc. La pratique philosophique frannçaise
-          étant volontiers structurée par la pratique de la familiarité avec les auteurs canoniques de la tradition - notamment du fait de ce concours - les anciens agrégatifs 
-          sont aisément marqués à vie par leur fréquentation intense des auteurs du programme pendant un an, particulièrement les auteurs du programme d'écrit. Et c'est sans parler
-          de l'influence de la forme même des épreuves sur la manière de produire des textes philosophiques, chose qui a été beaucoup commentée. En somme, considérer l'histoire 
-          des programmes de l'agrégation de philosophie, c'est bien considérer une part importante de l'histoire de la philosophie française.
-        </p>
-      </section>
-      <section>
-        <h3>Pourquoi AgregPhilo ?</h3>
-        <p id="fn1">
-          Le projet de constituer une base publique rassemblant les données des programmes de l'agrégation répond à un fait très simple : ces programmes sont difficilement
-          accessibles. Il est possible d'en trouver une partie sur internet, mais en plusieurs lieux différents selon les années, et sans pouvoir remonter très loin. Nous
-          pensons que l'accès public aux données est une des raisons d'être d'internet et un bien net qui mérite d'être réalisé quand il peut l'être.
-        </p>
-        <p>
-          La motivation initiale du projet est née d'une curiosité concernant le choix de l'ouvrage <em>Intention</em> d'Elizabeth Anscombe, à l'épreuve d'anglais en 2014.
-          La question se posait : était-ce la première fois, dans l'histoire plus que centenaire du concours, qu'une œuvre d'une femme était mise au programme ? Pour avoir
-          une réponse nette à cette question, il fallait se mettre à compiler<a href="#fn1" id="#n1">[1]</a>.
-      </p>
-      <p></p>
-      <p id="#fn1" style="font-size: small;">
-          <a href="#n1">[1]</a> Il semble que oui, en tout cas certainement la première œuvre écrite par une femme depuis 1988. Par la suite, la chose s'est reproduite deux fois :
-          Arendt est apparue, de nouveau dans le programme d'anglais, en 2023, et Simone Weil dans le programme français d'oral en 2024, celui-ci comportant donc la seule présence
-          féminine du programme commun à tous les candidats depuis que le concours existe.
-        </p>
-      </section>
-    </section>
-
-    <section>
-      <h2>Comment contribuer ?</h2>
-      <p>
-        Si vous souhaitez participer au projet, savoir quoi faire, comment recueillir de nouvelles données, ou proposer quelque chose de plus sérieux que ce bricolage,
-        <a href="../contact.html#contact">contactez l'auteur de la page</a> !
-      </p>
-    </section>
-</div>
-</body>
-</html>
+    <p>
+      La difficulté extrême du concours - du fait d'un nombre relativement restreint de places - et le prestige qui l'accompagne, en font aujourd'hui encore un passage presque 
+      obligé pour l'accès à l'université. Pour faire bref : les philosophes français d'importance, depuis plus d'un siècle, à n'être pas agrégé, ne sont pas si nombreux. De 
+      fait, comme l'a montré <a target="_blank" href="https://muse.jhu.edu/article/241097">Alan Schrift</a>, l'agrégation de philosophie a marqué les générations de philosophes 
+      du siècle dernier, mobilisant chaque année non seulement un contingent d'étudiant·es, mais aussi leurs professeurs, sollicités dans chaque université, ainsi que les 
+      éditeurs et spécialistes des œuvres au programme sommés de rapidement produire des synthèses ou des colloques thématiques, etc. La pratique philosophique frannçaise
+      étant volontiers structurée par la pratique de la familiarité avec les auteurs canoniques de la tradition - notamment du fait de ce concours - les anciens agrégatifs 
+      sont aisément marqués à vie par leur fréquentation intense des auteurs du programme pendant un an, particulièrement les auteurs du programme d'écrit. Et c'est sans parler
+      de l'influence de la forme même des épreuves sur la manière de produire des textes philosophiques, chose qui a été beaucoup commentée. En somme, considérer l'histoire 
+      des programmes de l'agrégation de philosophie, c'est bien considérer une part importante de l'histoire de la philosophie française.
+    </p>
+  </section>
+  <section>
+    <h3>Pourquoi AgregPhilo ?</h3>
+    <p id="fn1">
+      Le projet de constituer une base publique rassemblant les données des programmes de l'agrégation répond à un fait très simple : ces programmes sont difficilement
+      accessibles. Il est possible d'en trouver une partie sur internet, mais en plusieurs lieux différents selon les années, et sans pouvoir remonter très loin. Nous
+      pensons que l'accès public aux données est une des raisons d'être d'internet et un bien net qui mérite d'être réalisé quand il peut l'être.
+    </p>
+    <p>
+      La motivation initiale du projet est née d'une curiosité concernant le choix de l'ouvrage <em>Intention</em> d'Elizabeth Anscombe, à l'épreuve d'anglais en 2014.
+      La question se posait : était-ce la première fois, dans l'histoire plus que centenaire du concours, qu'une œuvre d'une femme était mise au programme ? Pour avoir
+      une réponse nette à cette question, il fallait se mettre à compiler<a href="#fn1" id="#n1">[1]</a>.
+  </p>
+  <p></p>
+  <p id="#fn1" style="font-size: small;">
+      <a href="#n1">[1]</a> Il semble que oui, en tout cas certainement la première œuvre écrite par une femme depuis 1988. Par la suite, la chose s'est reproduite deux fois :
+      Arendt est apparue, de nouveau dans le programme d'anglais, en 2023, et Simone Weil dans le programme français d'oral en 2024, celui-ci comportant donc la seule présence
+      féminine du programme commun à tous les candidats depuis que le concours existe.
+    </p>
+  </section>
+</section>

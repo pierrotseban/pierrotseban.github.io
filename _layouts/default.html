@@ -1,0 +1,18 @@
+<!-- Copyright Pierrot Seban 2024- -->
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ 'assets/css/styles.css' | relative_url }}" rel="stylesheet">
+    <title>{{ page.title }}</title>
+    {% feed_meta %}
+    {% seo %}
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div style="margin-bottom: 100px";>
+      {{ content }}
+    </div>
+  </body>
+</html>

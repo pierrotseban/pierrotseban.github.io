@@ -1,4 +1,5 @@
 /scripts
 ~$*.*
-agregphilo/table_auteur.csv
+*table_auteur.csv
 _site/
+Gemfile.lock

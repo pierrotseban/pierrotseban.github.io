@@ -1,0 +1,28 @@
+-
+  - name: À propos
+    type: solopage
+    link: /
+    id: home
+  - name: Œuvres
+    type: solopage
+    link: /oeuvres.html
+    id: works
+  - name: Blog
+    type: solopage
+    link: /blog.html
+    id: blog
+- 
+  - name: AgregPhilo
+    type: dropdown
+    id: agregphilo
+    content: 
+      - name: Présentation
+        link: /agregphilo/
+      - name: Accéder aux données
+        link: /agregphilo/data.html
+      - name: Utiliser les données
+        link: /agregphilo/tools.html
+  - name: Contact
+    type: solopage
+    link: /contact.html
+    id: contact
