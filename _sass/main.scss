@@ -1,3 +1,11 @@
+.site-container {
+max-width: 900px; /* Limits the width of the site */
+// margin: 0 auto;    /* Centers the container horizontally */
+margin-bottom: 100px;
+padding: 0 6px;   /* Adds some horizontal padding for smaller screens */
+box-sizing: border-box; /* Includes padding in the element's width */
+}
+
 p {
 text-align: justify;
 text-justify: inter-word;
@@ -11,110 +19,49 @@ box-sizing: border-box;
 
 .row {
 display: flex;
-max-width: 900px;
 }
 
 /* Create two equal columns that floats next to each other */
 .piccolumn {
 flex: auto;
-padding: 10px;
 padding-top: 50px;
+max-width: 600px;
 }
 .parcolumn {
 flex:auto;
 padding: 10px;
-/* min-width: 300px; */
 }
 
-nav {  
+.image-row {
 display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-background-color: #7c7c7c;
-max-width: 1000px;
-justify-content: center;
+flex-wrap: wrap; /* Allows wrapping when the row is too small */
+// max-width: 100%; /* Restricts the row to fit within the parent container */
+margin: 0 auto; /* Center the row horizontally */
+gap: 8px; /* Minimal spacing between images */
 }
 
-nav>div{
-
-display: inline-flex;
-flex-grow: 1;
-justify-content: center;
+.image-row a {
+flex: 1 1 calc(33.333% - 8px); /* Each link takes up a third of the row minus the gap */
+text-decoration: none; /* Removes underline from links */
 }
 
-nav a {
-flex-grow: 1;
-color: rgb(0, 0, 0);
-padding: 14px 20px;  
-text-decoration: none;  
-text-align: center;
-font-size: x-large;
-font-weight: 600;
-border: 1px solid #bbb;
+.image-row img {
+max-width: 100%; /* Ensures images do not overflow */
+height: auto; /* Maintains aspect ratio */
+object-fit: cover; /* Ensures images fill their space */
+border: 2px solid #ccc; /* Adds a border to the images */
+border-radius: 4px; /* Optional: adds rounded corners to the borders */
+transition: transform 0.3s, border-color 0.3s; /* Adds a hover effect */
 }
 
-nav .active {
-background-color: #936f94;
+.image-row img:hover {
+transform: scale(1.01); /* Slightly enlarges the image on hover */
+border-color: #808080d8; /* Changes the border color on hover */
 }
 
-/* The dropdown container */
-.dropdown {
-display: block;
-block-size: 1;
-justify-content: center;
-float: left;
-overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-display: flex;
-flex-grow: 1;
-color: rgb(0, 0, 0);
-padding: 14px 20px;  
-text-align: center;
-font-size: x-large;
-font-weight: 600;
-border: 1px solid #bbb;
-background-color: inherit;
-font-family: inherit; /* Important for vertical align on mobile phones */
-margin: 0; /* Important for vertical align on mobile phones */
-}
-
-nav .dropdown:hover:not(.active) .dropbtn{
-background-color: #584158;
-}
-
-nav a:hover:not(.active) {
-background-color: #584158;
-}
-
-/* Dropdown content (hidden by default) */
-nav .dropdown-content {
-display: none;
-position: absolute;
-background-color: #a8a8a8;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-}
-
-/* Links inside the dropdown */
-nav .dropdown-content a {
-float: none;
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-/* .dropdown-content a:hover {
-background-color: #ddd;
-} */
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-display: block;
+.blurb {
+margin-left: 15px;
+font-style: oblique;
+// margin: 0 auto;
+max-width: 600px;
 }

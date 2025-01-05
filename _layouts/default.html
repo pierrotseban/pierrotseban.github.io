@@ -4,15 +4,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/assets/js/main.js"></script>
     <link href="{{ 'assets/css/styles.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ 'assets/css/nav.css' | relative_url }}" rel="stylesheet">
     <title>{{ page.title }}</title>
     {% feed_meta %}
     {% seo %}
   </head>
+<div class="site-container">
   <body>
     {% include navbar.html %}
-    <div style="margin-bottom: 100px";>
-      {{ content }}
-    </div>
+    {{ content }}
   </body>
+</div>
 </html>

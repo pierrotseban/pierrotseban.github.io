@@ -5,23 +5,27 @@
     id: home
   - name: Œuvres
     type: solopage
-    link: /oeuvres.html
+    link: /oeuvres/
     id: works
   - name: Blog
     type: solopage
     link: /blog.html
     id: blog
 - 
-  - name: AgregPhilo
+  - name: Projet AgregPhilo
     type: dropdown
     id: agregphilo
+    link: /agregphilo/
     content: 
       - name: Présentation
         link: /agregphilo/
+        id: agregphilo
       - name: Accéder aux données
         link: /agregphilo/data.html
+        id: agregphilo_data
       - name: Utiliser les données
         link: /agregphilo/tools.html
+        id: agregphilo_tools
   - name: Contact
     type: solopage
     link: /contact.html

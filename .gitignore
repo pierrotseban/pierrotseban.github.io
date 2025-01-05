@@ -2,4 +2,6 @@
 ~$*.*
 *table_auteur.csv
 _site/
+_scripts/
 Gemfile.lock
+/.sass-cache/
