@@ -17,31 +17,17 @@ id: blog
 
 <h2> Quelques articles : </h2>
 <div style="display: flex; flex-wrap: wrap; text-align: center;">
-  <div class="substack-post-embed">
-    <p lang="fr">Un collectif pour tuer le libre-arbitre</p>
-    <a data-post-link href="https://antinomiste.substack.com/p/un-collectif-pour-tuer-le-libre-arbitre">Lire sur
-      Substack</a>
-  </div>
-  <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
-
-  <div class="substack-post-embed">
-    <p lang="fr">Ce que je dois à Bergson – Exploration œcuménique</p>
-    <a data-post-link href="https://antinomiste.substack.com/p/ce-que-je-dois-a-bergson-exploration-oecumenique">Lire
-      sur Substack</a>
-  </div>
-  <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
-
-  <div class="substack-post-embed">
-    <p lang="fr">« Paradoxe » et « aporie »</p>
-    <a data-post-link href="https://antinomiste.substack.com/p/paradoxe-et-aporie">Lire sur Substack</a>
-  </div>
-  <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
-
-  <div class="substack-post-embed">
-    <p lang="fr">La bonne mesure technique (brève réactionnaire)</p>
-    <a data-post-link
-      href="https://antinomiste.substack.com/p/la-bonne-mesure-technique-breve-reactionnaire">Lire sur Substack</a>
-  </div>
-  <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
-
+  
+  <!-- {% assign random_blogposts = site.data.blogposts | randomize %} -->
+  {% assign random_blogposts = site.data.blogposts %}
+  {% for post in random_blogposts limit:4 offset:0 %}
+    <div class="substack-post-embed">
+      <p lang="fr">{{ post.title }}</p>
+      {% if post.subtitle %}
+      <p lang="fr">{{ post.subtitle }}</p>
+      {% endif %}
+      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+    </div>
+    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+  {% endfor %}
 </div>
