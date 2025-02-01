@@ -20,7 +20,7 @@ id: blog
   
   <!-- {% assign random_blogposts = site.data.blogposts | randomize %} -->
   {% assign random_blogposts = site.data.blogposts %}
-  {% for post in random_blogposts limit:4 offset:0 %}
+  {% for post in random_blogposts limit:6 offset:0 %}
     <div class="substack-post-embed">
       <p lang="fr">{{ post.title }}</p>
       {% if post.subtitle %}
