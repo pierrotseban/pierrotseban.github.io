@@ -22,9 +22,11 @@ id: tempsinfini_notes
 <!-- [**PARTIE IV <span class="smallcaps">L’intuition du passage</span>**](/oeuvres/tempsetinfini/notes/P4.html) -->
 **PARTIE IV <span class="smallcaps">L’intuition du passage</span>**
 
-<!-- [**PARTIE V <span class="smallcaps">Conclusion : résoudre l’aporie</span>**](/oeuvres/tempsetinfini/notes/P5.html) -->
-**PARTIE V <span class="smallcaps">Conclusion : résoudre l’aporie</span>**
+[**PARTIE V <span class="smallcaps">Conclusion : résoudre l’aporie</span>**](/oeuvres/tempsetinfini/notes/P5.html)
+<!-- **PARTIE V <span class="smallcaps">Conclusion : résoudre l’aporie</span>** -->
 
 **Bibliographie**
 
 **Index**
+
+[**Annexes (inédites !)**](/oeuvres/tempsetinfini/notes/annexes.html)

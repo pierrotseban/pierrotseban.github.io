@@ -7,7 +7,7 @@ id: tempsinfini_merci
 
 ### Remerciements
 
-Un livre de cette sorte est, d’une manière ou d’une autre, le produit de tant d’années que d’en écrire les remerciements en bonne et due forme me mettrait sur la voie d’écrire mes mémoires. Il faut donc faire,relativement, bref.
+Un livre de cette sorte est, d’une manière ou d’une autre, le produit de tant d’années que d’en écrire les remerciements en bonne et due forme me mettrait sur la voie d’écrire mes mémoires. Il faut donc faire, relativement, bref.
 
 Le contenu du livre prend sa source dans ma thèse de doctorat, *L’aporie du passage. Zénon d’Élée et le principe d’achevabilité*, soutenue à l’Université Paris Nanterre en 2018. Je remercie sincèrement mon cher directeur et maître, Jean-Michel Salanskis, tant pour le modèle intellectuel qu’il a été et demeure, et pour sa chaleur et ses encouragements ; si je m’écarte de ses enseignements, ce n’est pas sans penser à lui. Je remercie les membres de mon jury, Hourya Benis-Sinaceur, Ali Benmakhlouf, Brice Halimi, et Marwan Rashed, pour leurs lectures à la fois généreuses et acérées, qui ont fait de mon rapport de soutenance un texte d’une qualité philosophique ridiculement haute, allant jusqu’à comporter des résultats philologiques inédits. Les remarques de Brice Halimi, absolument incompréhensibles pour le public épuisé que nous étions à la fin de la  soutenance, n’ont pas manqué de me hanter depuis. Ce livre doit beaucoup à ma volonté de me rendre à la hauteur de ces mots qui ont clos l’aventure de la thèse, de même qu’il doit beaucoup à la volonté de répondre à la perplexité persistante d’Elie During qui avait inauguré cette même aventure des années plus tôt et qui m’a constamment forcé à essayer de rendre mon propos explicite, d’abord pour moi.
 
