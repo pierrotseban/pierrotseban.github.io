@@ -27,4 +27,4 @@ Vous pouvez télécharger [ici](/assets/docs/russell.pdf) ma traduction d'une s�
 
 ### Le divorce bergsonien de l'extension et du devenir
 
-Vous pouvez télécharger [ici](/assets/docs/mctaggart.pdf) une sélection de passages du premier livre de Bergson, dans laquelle on trouve sa fameuse à Zénon qui implique un étrange divorce entre la forme de l'extension et la forme du devenir.
+Vous pouvez télécharger [ici](/assets/docs/bergson.pdf) une sélection de passages du premier livre de Bergson, dans laquelle on trouve sa fameuse à Zénon qui implique un étrange divorce entre la forme de l'extension et la forme du devenir.
