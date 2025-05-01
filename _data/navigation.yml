@@ -23,9 +23,6 @@
       - name: Accéder aux données
         link: /agregphilo/data.html
         id: agregphilo_data
-      - name: Utiliser les données
-        link: /agregphilo/tools.html
-        id: agregphilo_tools
   - name: Contact
     type: solopage
     link: /contact.html
