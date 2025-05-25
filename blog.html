@@ -15,12 +15,10 @@ id: blog
     background:white;" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<h2> Quelques articles : </h2>
+<h2> Les derniers articles : </h2>
 <div style="display: flex; flex-wrap: wrap; text-align: center;">
-  
-  <!-- {% assign random_blogposts = site.data.blogposts | randomize %} -->
-  {% assign random_blogposts = site.data.blogposts %}
-  {% for post in random_blogposts limit:6 offset:0 %}
+  {% assign all_blogposts = site.data.blogposts %}
+  {% for post in all_blogposts limit:6 offset:0 %}
     <div class="substack-post-embed">
       <p lang="fr">{{ post.title }}</p>
       {% if post.subtitle %}
@@ -31,3 +29,19 @@ id: blog
     <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
   {% endfor %}
 </div>
+
+<!-- <h2> D'autres articles : </h2>
+<div style="display: flex; flex-wrap: wrap; text-align: center;">
+  
+  {% assign random_blogposts = site.data.blogposts | randomize %}
+  {% for post in random_blogposts limit:6 offset:0 %}
+    <div class="substack-post-embed">
+      <p lang="fr">{{ post.title }}</p>
+      {% if post.subtitle %}
+      <p lang="fr">{{ post.subtitle }}</p>
+      {% endif %}
+      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+    </div>
+    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+  {% endfor %}
+</div> -->
