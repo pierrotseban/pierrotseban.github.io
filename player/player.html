@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio Player</title>
+    <meta charset="utf-8">
+
+    <!-- https://icomoon.io/app/ -->
+    <link rel="stylesheet" href="player.css">
+    <script src="player.js"></script>
+  </head>
+  <body>
+    <div id="player">
+      <!-- (PART A) CURRENT SONG IMAGE -->
+      <img id="playImg" src="songs/loading.webp">
+
+      <!-- (PART B) CONTROLS  -->
+      <div id="playControls">
+        <!-- (B1) SONG NAME -->
+        <div id="playName">Select A Song</div>
+
+        <!-- (B2) SONG TIME -->
+        <input id="playTimeR" type="range" value="0" min="0" disabled>
+        <div id="playTimeD">
+          <div id="playTimeN">0:00</div>
+          <div id="playTimeT">0:00</div>
+        </div>
+
+        <!-- (B3) LAST, PLAY/PAUSE, NEXT, VOLUME -->
+        <div id="playButtons">
+          <i id="playLast" class="icon-previous2"></i>
+          <i id="playTog" class="icon-pause2"></i>
+          <i id="playNext" class="icon-next2"></i>
+          <i id="playVolI" class="icon-volume-high"></i>
+          <input id="playVolR" type="range" min="0" max="1" step="0.1" value="1" disabled>
+        </div>
+      </div>
+
+      <!-- (PART C) PLAYLIST -->
+      <div id="playList">
+        <div data-src="Bach - Invention No. 04.mp3" data-img="guitar.webp">Bach 4</div>
+        <div data-src="Bach - Invention No. 10.mp3" data-img="piano.webp">Bach 10</div>
+        <div data-src="Bach - Invention No. 13.mp3" data-img="trombone.webp">Bach 13</div>  
+      </div>
+    </div>
+  </body>
+</html>

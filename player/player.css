@@ -1,0 +1,59 @@
+/* (PART A) WHOLE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body, html { background: #203274; }
+#player, #playTimeD, #playButtons { display: flex; }
+
+/* (PART B) WRAPPER & LAYOUT */
+#player {
+  flex-wrap: wrap;
+  min-width: 400px; max-width: 600px;
+  padding: 20px; border-radius: 10px;
+  background: #fff;
+}
+
+/* (PART C) CURRENT SONG IMAGE */
+#playImg {
+  width: 120px; height: auto; aspect-ratio: 1/1;
+  object-fit: cover; border-radius: 10px;
+}
+
+/* (PART D) CURRENT SONG NAME & CONTROLS */
+/* (D1) WRAPPER & SHARED */
+#playControls { width: calc(100% - 120px); padding-left: 10px; }
+#player input[type="range"] {
+  padding: 0; margin: 0;
+  border: none; outline: none; box-shadow: none;
+  accent-color: #ff4b4b;
+}
+
+/* (D2) SONG NAME */
+#playName {
+  font-size: 24px; margin-bottom: 10px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* (D3) SONG TIME */
+#playTimeN, #playTimeT { width: 50%; font-size: 14px; }
+#playTimeR { width: 100%; }
+#playTimeT { text-align: right; }
+
+/* (D4) ICOMOON - https://icomoon.io/ */
+@font-face{font-family:icomoon;src:url(fonts/icomoon.eot?d3ybsy);src:url(fonts/icomoon.eot?d3ybsy#iefix) format('embedded-opentype'),url(fonts/icomoon.ttf?d3ybsy) format('truetype'),url(fonts/icomoon.woff?d3ybsy) format('woff'),url(fonts/icomoon.svg?d3ybsy#icomoon) format('svg');font-weight:400;font-style:normal;font-display:block}
+[class*=" icon-"],[class^=icon-]{color: #515151;font-family:icomoon!important;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-play3:before{content:"\ea1c"}.icon-pause2:before{content:"\ea1d"}.icon-previous2:before{content:"\ea23"}.icon-next2:before{content:"\ea24"}.icon-volume-high:before{content:"\ea26"}.icon-volume-mute2:before{content:"\ea2a"}
+
+/* (D5) CONTROL BUTTONS */
+#playButtons { margin-top: 10px; align-items: center; }
+#playLast, #playTog, #playNext, #playVolI { cursor: pointer; }
+#playLast, #playTog, #playNext { font-size: 32px; flex-grow: 1; }
+#playVolI { font-size: 16px; margin-right: 5px; }
+#playVolR { flex-shrink: 1; max-width: 120px; }
+
+/* (PART E) PLAY LIST */
+#playList { width: 100%; margin-top: 20px; }
+#playList div { padding: 10px; cursor: pointer; }
+#playList div.current { font-weight: 700; color: #ff4b4b; }
+#playList div:nth-child(odd) { background: #f2f2f2; }
