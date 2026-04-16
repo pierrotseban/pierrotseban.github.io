@@ -1,0 +1,25 @@
+---
+layout: tempsinfini
+title: Le temps et l'infini - Remerciements
+navid: works
+id: tempsinfini_merci
+---
+
+### Remerciements
+
+Un livre de cette sorte est, d’une manière ou d’une autre, le produit de tant d’années que d’en écrire les remerciements en bonne et due forme me mettrait sur la voie d’écrire mes mémoires. Il faut donc faire, relativement, bref.
+
+Le contenu du livre prend sa source dans ma thèse de doctorat, *L’aporie du passage. Zénon d’Élée et le principe d’achevabilité*, soutenue à l’Université Paris Nanterre en 2018. Je remercie sincèrement mon cher directeur et maître, Jean-Michel Salanskis, tant pour le modèle intellectuel qu’il a été et demeure, et pour sa chaleur et ses encouragements ; si je m’écarte de ses enseignements, ce n’est pas sans penser à lui. Je remercie les membres de mon jury, Hourya Benis-Sinaceur, Ali Benmakhlouf, Brice Halimi, et Marwan Rashed, pour leurs lectures à la fois généreuses et acérées, qui ont fait de mon rapport de soutenance un texte d’une qualité philosophique ridiculement haute, allant jusqu’à comporter des résultats philologiques inédits. Les remarques de Brice Halimi, absolument incompréhensibles pour le public épuisé que nous étions à la fin de la  soutenance, n’ont pas manqué de me hanter depuis. Ce livre doit beaucoup à ma volonté de me rendre à la hauteur de ces mots qui ont clos l’aventure de la thèse, de même qu’il doit beaucoup à la volonté de répondre à la perplexité persistante d’Elie During qui avait inauguré cette même aventure des années plus tôt et qui m’a constamment forcé à essayer de rendre mon propos explicite, d’abord pour moi.
+
+Parmi les premiers lecteurs de la thèse, toute ma gratitude va à Francis Wolff, un autre de mes professeurs et une autre de mes inspirations, qui m’a fait l’honneur d’une postface à ce livre et qui, avant cela, avait fait une lecture si généreuse de ma thèse et m’avait invité à parler franchement de métaphysique à son séminaire des Lundis de la philosophie, encourageant l’esprit qui anime le présent ouvrage. Je suis également infiniment reconnaissant à Frédéric Berland pour son accueil initial dans sa collection de philosophie chez Hermann, et pour avoir suivi et guidé la transformation de la thèse en un nouveau format. Les hasards et les circonstances ont fait que le livre a fini par être édité ailleurs, mais je n’oublie pas ce que je lui dois.
+
+Pour l’existence matérielle actuelle de ce livre, je remercie Louis Morelle, Tristan Garcia, et mes éditeurs, Elie During, David Rabouin, et Patrice Maniglier, pour avoir cru dans le projet et l’avoir finalement mené à son terme et accueilli dans la collection MétaphysiqueS où il a je crois si naturellement sa place. Je suis d’autant plus reconnaissant que cette petite liste de noms contient quelques-unes des personnes que j’ai le plus eu l’occasion d’admirer intellectuellement depuis mes études, formant une *dream‑team*, si j’ose dire, de la philosophie française contemporaine, auprès de laquelle je suis très fier d’exister.
+
+Autant qu’ont compté pour moi mes professeurs et maîtres, il n’y a philosophie possible ni souhaitable sans les échanges avec mes pairs (et néanmoins ami·es). En particulier, puisque remercier Victor Béguin pour tout ce que je lui dois serait une tâche inachevable, et donc impossible, sachez juste, lecteurices, que vous lui devez d’avoir un livre au titre intelligible ! Et pas plus qu’avec lui, je ne saurais démêler ma pensée des conversations régulières avec Camilla Brenni, Jonathan Engélinus, Jim Gabaret, Maxime Jacqueline, Nicolas Michel et bien d’autres, que je remercie pour cela.
+
+L’aide et le travail à la fois matériel et moral de la famille et des ami·es est une condition indispensable d’abord pour rendre la vie vivable, et plus particulièrement pour qu’un tel livre soit possible. Merci donc, infiniment, à ma compagne, mes mamans, mon frère, ma sœur et mes belles-sœurs, et toustes les autres qui j’espère se sentiront visé·es. Je vous aime.
+
+Enfin, un coucou aux bébés de la production : Adel, Mati, Noé, Noé, et Suzanne ; et un remerciement spécial à Jean Tain, qui s’est vigoureusement plaint de l’absence de remerciements dans le volume publié, et sans qui cette page n’existerait pas.
+
+Lyon,
+Le 24 janvier 2025.

@@ -1,11 +1,47 @@
 ---
 layout: default
 title: Blog
+navid: blog
 id: blog
 ---
-
 <h2>Mon Blog</h2>
-  <p>
-    Allez-voir <a href="https://antinomiste.wordpress.com/" target="_blank">mon blog</a> (pour l'instant sur WordPress, sans-doute amené à déménager rapidement), 
-    pour faire renaître l'espoir de la philo collective comme durant l'âge d'or d'internet.
-  </p>
+<p>
+  Abonnez-vous à <a href="https://hypotyposes.substack.com/" target="_blank">mon blog philosophique</a>,
+  pour faire renaître l'espoir de la philo collective comme durant l'âge d'or d'internet.
+</p>
+
+<div style="margin:auto; width:90%;">
+  <iframe src="https://hypotyposes.substack.com/embed" width="80%" height="320" style="border:1px solid #EEE; 
+    background:white;" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<h2> Les derniers articles : </h2>
+<div style="display: flex; flex-wrap: wrap; text-align: center;">
+  {% assign all_blogposts = site.data.blogposts %}
+  {% for post in all_blogposts limit:6 offset:0 %}
+    <div class="substack-post-embed">
+      <p lang="fr">{{ post.title }}</p>
+      {% if post.subtitle %}
+      <p lang="fr">{{ post.subtitle }}</p>
+      {% endif %}
+      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+    </div>
+    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+  {% endfor %}
+</div>
+
+<h2> D'autres articles : </h2>
+<div style="display: flex; flex-wrap: wrap; text-align: center;">
+  
+  {% assign random_blogposts = site.data.blogposts | randomize %}
+  {% for post in random_blogposts limit:6 offset:0 %}
+    <div class="substack-post-embed">
+      <p lang="fr">{{ post.title }}</p>
+      {% if post.subtitle %}
+      <p lang="fr">{{ post.subtitle }}</p>
+      {% endif %}
+      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+    </div>
+    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+  {% endfor %}
+</div>

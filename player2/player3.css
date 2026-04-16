@@ -1,0 +1,39 @@
+body {
+    font-family: Arial;
+    background: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.player, .playlist {
+    width: 300px;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.track { padding: 10px; cursor: pointer; }
+.track:hover { background: #2a2a2a; }
+
+.active {
+    background: #1db954;
+    color: black;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}

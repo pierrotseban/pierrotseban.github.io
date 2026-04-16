@@ -1,19 +1,72 @@
 ---
 layout: agregphilo
 title: Projet AgregPhilo - Données
-id: agregphilo
+navid: agregphilo
+id: agregphilo_data
 ---
 <section>
-  <h2>Accéder aux documents</h2>
-  <p>
-    <a>Consulter la compilation des programmes sur <a target="_blank" href="https://docs.google.com/spreadsheets/d/1txF-nwoBXEArIWvjw-BNkYkwAS6fg6bNO2eo8W12Hjw/edit?usp=sharing">
-      Google docs</a>
-  </p>
-  <p>Télécharger le tableau des programmes <a href="/assets/docs/programmes_agreg_philo_1987-2025_data.xlsx">au format excel</a></p>
-  <p>
-    Télécharger le tableau au format CSV : <a href="/assets/docs/programmes_agreg_philo_1987-2025_synthèse.csv">synthèse</a>,
-    <a href="/assets/docs/programmes_agreg_philo_1987-2025_synthèse.csv">verbatim</a>
-  </p>
-  <!-- <p>Voir les données brutes <a href="synthese.html">sous forme synthétique</a>, ou <a href="verbatim.html">en verbatim</a></p> -->
-  <p>Télécharger les <a href="/assets/docs/programmes_agreg_philo_1987-2025_src.pdf">programmes compilés</a> eux-mêmes (pdf de >20Mo)</p>
+  <section>
+    <h2>Accéder aux documents</h2>
+    <p>
+      <a>Consulter la compilation des programmes (informations partielles depuis 1953) sur <a target="_blank" href="https://docs.google.com/spreadsheets/d/1TjFHSQ6DJ_oTTYwtm6cSx1TS9rZkaP8oq2-ry4HtccI/edit?usp=sharing">
+        Google docs</a>
+    </p>
+    <p>Télécharger la compilation des programmes (informations partielles depuis 1953) <a href="/assets/docs/programmes_agreg_philo_data.xlsx">au format excel</a></p>
+    <p>
+      Télécharger le tableau au format CSV : <a href="/assets/docs/programmes_agreg_philo_synthèse.csv">synthèse</a> (partiel depuis 1953),
+      <a href="/assets/docs/programmes_agreg_philo_synthèse.csv">verbatim</a> (depuis 1987)
+    </p>
+    <!-- <p>Voir les données brutes <a href="synthese.html">sous forme synthétique</a>, ou <a href="verbatim.html">en verbatim</a></p> -->
+    <p>Télécharger les <a href="/assets/docs/programmes_agreg_philo_src.pdf">programmes compilés</a> eux-mêmes (depuis 1987) (pdf >20Mo)</p>
+  </section>
+
+  <section>
+    <h2>Faire une requête</h2>
+    <p>Vous pouvez sélectionner autant d'années et de colonnes que désirées (mais l'affichage peine
+      au-delà de 8 colonnes.)
+    </p>
+    <p>
+      L'absence d'une valeur peut signifier que je n'ai pu encore la trouver, ou que rien ne lui correspond
+      pour l'année en question.
+    </p>
+    <p>
+      Si aucune des valeurs sélectionnées n'est remplie pour une année donnée, l'année n'apparait pas
+      dans les résultats.
+    </p>
+    <form id="filter-form">
+      <div class="form-row">
+        <div>
+      <label for="year-select">Années</label><br>
+      <select id="year-select" multiple size="5"></select><br><br>
+      </div>
+      <div>
+      <label for="column-select">Valeurs sélectionnées</label><br>
+      <select id="column-select" multiple size="5"></select><br><br>
+        </div>
+    </div>
+      <button type="submit">Afficher les données</button>
+    </form>
+  
+    <div style="overflow: auto; max-width: 130%; max-height: 500px;">
+      <table id="result-table"></table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="/assets/js/stats_agreg.js"></script>
+  </section>
+
+  <section>
+    <h2>Quelques résultats</h2>
+    <h3> Les auteurs de l'écrit (1960-)</h3>
+    <div style="overflow: auto; max-height: 300px;" id="auteurs-ecrit"></div>
+
+    <h3> Les dates des textes en langue étrangère (1987-)</h3>
+    <div id="stats-langues"></div>
+
+    <h3> Nombre de fois qu'une oeuvre par une femme est apparue au programme</h3>
+    <p> Ecrit : 0 </p>
+    <p> Programme commun oral : 1 (Simone Weil, 2024) </p>
+    <p> Spécialité anglais : 2 (Elizabeth Anscombe 2014, Hannah Arendt 2023)</p>
+
+  </section>
 </section>

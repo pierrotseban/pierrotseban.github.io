@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Player React</title>
+
+  <script src="react.development.js"></script>
+  <script src="react-dom.development.js"></script>
+  <script src="babel.min.js"></script>
+  <link rel="stylesheet" href="player3.css">
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+const playlistData = [
+  {
+    src: 'Bach - Invention No. 04.mp3',
+    title: 'Invention No. 04',
+    artist: 'Bach',
+    cover: 'piano.webp'
+  },
+  {
+    src: 'Bach - Invention No. 10.mp3',
+    title: 'Invention No. 10',
+    artist: 'Bach',
+    cover: 'piano.webp'
+  },  
+  {
+    src: 'Bach - Invention No. 13.mp3',
+    title: 'Invention No. 13',
+    artist: 'Bach',
+    cover: 'piano.webp'
+  },
+];
+
+// =======================
+// 🎛 CONTROLS
+// =======================
+function Controls({ isPlaying, onPlayPause, onNext, onPrev }) {
+  return (
+    <div>
+      <button onClick={onPrev}>⏮</button>
+      <button onClick={onPlayPause}>
+        {isPlaying ? "⏸" : "▶️"}
+      </button>
+      <button onClick={onNext}>⏭</button>
+    </div>
+  );
+}
+
+// =======================
+// 🎚 PROGRESS BAR
+// =======================
+function ProgressBar({ currentTime, duration, onSeek }) {
+  return (
+    <div>
+      <input
+        type="range"
+        min="0"
+        max={duration}
+        value={currentTime}
+        step="0.1"
+        onChange={onSeek}
+      />
+      <div>
+        {Math.floor(currentTime)} / {Math.floor(duration)} sec
+      </div>
+    </div>
+  );
+}
+
+// =======================
+// 📃 PLAYLIST
+// =======================
+function Playlist({ tracks, currentIndex, onSelect }) {
+  return (
+    <div className="playlist">
+      {tracks.map((track, index) => (
+        <div
+          key={index}
+          className={"track " + (index === currentIndex ? "active" : "")}
+          onClick={() => onSelect(index)}
+        >
+          {track.title} - {track.artist}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// =======================
+// 🎵 PLAYER (LOGIQUE)
+// =======================
+function Player() {
+
+  // 🧠 STATE
+  const [currentIndex, setCurrentIndex] = React.useState(() => Number(localStorage.getItem("index")) || 0);
+  const [isPlaying, setIsPlaying] = React.useState(() => localStorage.getItem("playing") === "true");
+  const [currentTime, setCurrentTime] = React.useState(() => Number(localStorage.getItem("time")) || 0);
+  const [duration, setDuration] = React.useState(0);
+
+  const audioRef = React.useRef(null);
+
+  const track = playlistData[currentIndex];
+
+  // ▶️ CONTROLS
+  function togglePlay() {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  }
+
+  function nextTrack() {
+    setCurrentIndex((currentIndex + 1) % playlistData.length);
+    setIsPlaying(true);
+  }
+
+  function prevTrack() {
+    if (audioRef.current.currentTime > 3) {
+      audioRef.current.currentTime = 0;
+    } else {
+      setCurrentIndex((currentIndex - 1 + playlistData.length) % playlistData.length);
+    }
+  }
+
+  function selectTrack(index) {
+    setCurrentIndex(index);
+    setIsPlaying(true);
+  }
+
+  // ⏱ TIME UPDATE
+  function handleTimeUpdate() {
+    setCurrentTime(audioRef.current.currentTime);
+    setDuration(audioRef.current.duration || 0);
+  }
+
+  function handleSeek(e) {
+    const t = e.target.value;
+    audioRef.current.currentTime = t;
+    setCurrentTime(t);
+  }
+
+  function handleLoadedMetadata() {
+    audioRef.current.currentTime = currentTime;
+  }
+
+  // 🔁 AUTO PLAY
+  React.useEffect(() => {
+    if (isPlaying) audioRef.current.play();
+  }, [currentIndex]);
+
+  // 💾 SAVE
+  React.useEffect(() => localStorage.setItem("index", currentIndex), [currentIndex]);
+  React.useEffect(() => localStorage.setItem("playing", isPlaying), [isPlaying]);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      localStorage.setItem("time", audioRef.current.currentTime);
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // 🎧 MEDIA SESSION
+  React.useEffect(() => {
+    if (!("mediaSession" in navigator)) return;
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: track.title,
+      artist: track.artist
+    });
+
+    navigator.mediaSession.setActionHandler("play", togglePlay);
+    navigator.mediaSession.setActionHandler("pause", togglePlay);
+    navigator.mediaSession.setActionHandler("nexttrack", nextTrack);
+    navigator.mediaSession.setActionHandler("previoustrack", prevTrack);
+
+  }, [currentIndex]);
+
+  React.useEffect(() => {
+    if (!("mediaSession" in navigator)) return;
+    navigator.mediaSession.playbackState = isPlaying ? "playing" : "paused";
+  }, [isPlaying]);
+
+  // 🎨 UI
+  return (
+    <div className="container">
+
+      <div className="player">
+        <img src={track.cover}></img>
+        <h2>{track.title}</h2>
+        <p>{track.artist}</p>
+
+        <Controls
+          isPlaying={isPlaying}
+          onPlayPause={togglePlay}
+          onNext={nextTrack}
+          onPrev={prevTrack}
+        />
+
+        <ProgressBar
+          currentTime={currentTime}
+          duration={duration}
+          onSeek={handleSeek}
+        />
+
+        <audio
+          ref={audioRef}
+          src={track.src}
+          onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={handleLoadedMetadata}
+          onEnded={nextTrack}
+        />
+      </div>
+
+      <Playlist
+        tracks={playlistData}
+        currentIndex={currentIndex}
+        onSelect={selectTrack}
+      />
+
+    </div>
+  );
+}
+
+// =======================
+// 🚀 APP
+// =======================
+function App() {
+  return <Player />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+</script>
+
+</body>
+</html>
