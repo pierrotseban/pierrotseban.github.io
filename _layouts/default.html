@@ -8,14 +8,13 @@
     <link href="{{ 'assets/css/styles.css' | relative_url }}" rel="stylesheet">
     <link href="{{ 'assets/css/nav.css' | relative_url }}" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/images/favicon.ico"/>
-    <title>{{ page.title }}</title>
     {% feed_meta %}
     {% seo %}
   </head>
-<div class="site-container">
-  <body>
-    {% include navbar.html %}
-    {{ content }}
-  </body>
-</div>
+  <div class="site-container">
+    <body>
+      {% include navbar.html %}
+      {{ content }}
+    </body>
+  </div>
 </html>
