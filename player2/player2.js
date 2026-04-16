@@ -21,6 +21,7 @@ const playlist = [
   },
 ];
 
+
 let currentIndex = 0;
 let isPlaying = false;
 
@@ -133,6 +134,10 @@ function updatePlaybackState() {
   }
 }
 
+// =======================
+// Playlist rendering
+// =======================
+
 function renderPlaylist() {
   playlistEl.innerHTML = '';
 
@@ -161,8 +166,6 @@ function updatePlaylistUI() {
     el.classList.toggle('active', index === currentIndex);
   });
 }
-
-
 
 // =======================
 // Init
