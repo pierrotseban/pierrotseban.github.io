@@ -62,7 +62,7 @@
 
 
   (async function main() {
-    const data = await loadCSV('/assets/docs/programmes_agreg_philo_synthèse.csv');
+    const data = await loadCSV('/assets/docs/agregphilo/programmes_agreg_philo_synthèse.csv');
     const headers = data[0];
     const years = data.slice(1).map(r => r[0]);
     const uniqueYears = [...new Set(years)];
