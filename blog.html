@@ -15,33 +15,124 @@ id: blog
     background:white;" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<!-- <h2> Les derniers articles : </h2>
-<div style="display: flex; flex-wrap: wrap; text-align: center;">
-  {% assign all_blogposts = site.data.blogposts %}
-  {% for post in all_blogposts limit:6 offset:0 %}
-    <div class="substack-post-embed">
-      <p lang="fr">{{ post.title }}</p>
+{% assign new_posts = 3 %}
+
+<h2> Les derniers articles : </h2>
+<div class="grid">
+  {% assign all_blogposts = site.data.posts %}
+  {% for post in all_blogposts limit:new_posts offset:0 %}
+  <div class="card">
+    {% if post.image %}
+    <a class="postimage" href="{{ post.url }}">
+      <img src="{{ post.image }}" alt="{{ post.title }}">
+    </a>
+    {% endif %}
+
+    <div class="content">
+      <a class="title" href="{{ post.url }}">
+        {{ post.title }}
+      </a>
       {% if post.subtitle %}
-      <p lang="fr">{{ post.subtitle }}</p>
+      <p class="subtitle">{{ post.subtitle | strip_html | truncate: 60 }}</p>
       {% endif %}
-      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+      <p class="summary">{{ post.summary | strip_html | truncate: 200 }}</p>
+      <div class="authorcard">
+        <div class="authorpicture">
+            <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+              <img src="assets/images/antinomistesubstack.jpg">
+            </a>
+        </div>
+        <div class="authorlink">
+          <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+            Antinomiste
+          </a>
+        </div>
+        <div class="bloglinks">
+          <a href="https://open.substack.com/pub/hypotyposes?utm_source=substack&amp;utm_campaign=embedded-post"
+            target="_blank">
+            Hypotyposes
+          </a>
+          <span class="subscribelink">
+            <a target="_blank"
+              href="https://hypotyposes.substack.com/subscribe?utm_source=substack&amp;utm_medium=web&amp;utm_content=embedded-post">
+              S'abonner
+            </a>
+          </span>
+        </div>
+        <div class="postdate">
+          {{ post.pubDate }}
+        </div>
+      </div>
     </div>
-    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+    <div class="substack">
+      <a target="_blank" href="{{ post.url }}">
+          <img src="assets/images/SubstackIcon.png">
+      </a>
+      <a target="_blank" href="{{ post.url }}">
+          Lire sur Substack
+      </a>
+    </div>
+  </div>
   {% endfor %}
 </div>
 
 <h2> D'autres articles : </h2>
 <div style="display: flex; flex-wrap: wrap; text-align: center;">
   
-  {% assign random_blogposts = site.data.blogposts | randomize %}
-  {% for post in random_blogposts limit:6 offset:0 %}
-    <div class="substack-post-embed">
-      <p lang="fr">{{ post.title }}</p>
+  {% assign subset = site.data.posts | slice: new_posts, 100 %}
+  {% assign random_blogposts = subset | randomize %}
+  {% for post in random_blogposts limit:3 %}
+  <div class="card">
+    {% if post.image %}
+    <a class="postimage" href="{{ post.url }}">
+      <img src="{{ post.image }}" alt="{{ post.title }}">
+    </a>
+    {% endif %}
+
+    <div class="content">
+      <a class="title" href="{{ post.url }}">
+        {{ post.title }}
+      </a>
       {% if post.subtitle %}
-      <p lang="fr">{{ post.subtitle }}</p>
+      <p class="subtitle">{{ post.subtitle | strip_html | truncate: 60 }}</p>
       {% endif %}
-      <a data-post-link href="{{ post.address }}">Lire sur Substack</a>
+      <p class="summary">{{ post.summary | strip_html | truncate: 200 }}</p>
+      <div class="authorcard">
+        <div class="authorpicture">
+            <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+              <img src="assets/images/antinomistesubstack.jpg">
+            </a>
+        </div>
+        <div class="authorlink">
+          <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+            Antinomiste
+          </a>
+        </div>
+        <div class="bloglinks">
+          <a href="https://open.substack.com/pub/hypotyposes?utm_source=substack&amp;utm_campaign=embedded-post"
+            target="_blank">
+            Hypotyposes
+          </a>
+          <span class="subscribelink">
+            <a target="_blank"
+              href="https://hypotyposes.substack.com/subscribe?utm_source=substack&amp;utm_medium=web&amp;utm_content=embedded-post">
+              S'abonner
+            </a>
+          </span>
+        </div>
+        <div class="postdate">
+          {{ post.pubDate }}
+        </div>
+      </div>
     </div>
-    <script async src="./assets/js/substack_embed.js" charset="utf-8"></script>
+    <div class="substack">
+      <a target="_blank" href="{{ post.url }}">
+          <img src="assets/images/SubstackIcon.png">
+      </a>
+      <a target="_blank" href="{{ post.url }}">
+          Lire sur Substack
+      </a>
+    </div>
+  </div>
   {% endfor %}
-</div> -->
+</div>
