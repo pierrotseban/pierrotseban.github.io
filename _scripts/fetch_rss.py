@@ -1,5 +1,6 @@
 import feedparser
 import json
+import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
@@ -44,7 +45,16 @@ def extract_summary(entry):
         return summary
     return clean_summary(entry["content"][0]["value"])
 
-feed = feedparser.parse(FEED_URL)
+headers = {
+    "User-Agent": "Mozilla/5.0 (compatible; MyFeedFetcher/1.0)"
+}
+
+response = requests.get(FEED_URL, headers=headers)
+response.raise_for_status()
+
+feed = feedparser.parse(response.content)
+
+print("Entries:", len(feed.entries))
 
 posts = []
 
