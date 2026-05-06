@@ -51,9 +51,14 @@ headers = {
     "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.5",
     "Connection": "keep-alive",
+    "Referer": "https://www.google.com/",
 }
 
-response = requests.get(FEED_URL, headers=headers)
+session = requests.Session()
+session.headers.update(headers)
+
+response = session.get(FEED_URL)
+
 response.raise_for_status()
 
 feed = feedparser.parse(response.content)
