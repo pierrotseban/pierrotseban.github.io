@@ -1,5 +1,0 @@
-feedparser
-beautifulsoup4
-jason
-datetime
-requests
