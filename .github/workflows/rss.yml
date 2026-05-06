@@ -2,7 +2,7 @@ name: Fetch RSS
 
 on:
   schedule:
-    - cron: "0 12 * * *"   # tous les jours à midi
+    - cron: "30 14 * * *"   # tous les jours à 14h30
   workflow_dispatch:      # bouton manuel
 
 jobs:
