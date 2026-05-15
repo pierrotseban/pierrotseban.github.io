@@ -33,9 +33,9 @@ id: blog
         {{ post.title }}
       </a>
       {% if post.subtitle %}
-      <p class="subtitle">{{ post.subtitle | strip_html | truncate: 60 }}</p>
+      <p class="subtitle">{{ post.subtitle | strip_html | truncate: 80 }}</p>
       {% endif %}
-      <p class="summary">{{ post.summary | strip_html | truncate: 220 }}</p>
+      <p class="summary">{{ post.summary | strip_html | truncate: 200 }}</p>
       <div class="authorcard">
         <div class="authorpicture">
             <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
