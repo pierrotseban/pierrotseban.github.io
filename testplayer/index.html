@@ -4,36 +4,16 @@
   <meta charset="UTF-8">
   <title>Mini Player React</title>
 
-  <script src="react.development.js"></script>
-  <script src="react-dom.development.js"></script>
-  <script src="babel.min.js"></script>
-  <link rel="stylesheet" href="player3.css">
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script src="js/playlist.js"></script>
+  <link rel="stylesheet" href="player.css">
 </head>
 
 <body>
 <div id="root"></div>
 <script type="text/babel">
-
-const playlistData = [
-  {
-    src: 'Bach - Invention No. 04.mp3',
-    title: 'Invention No. 04',
-    artist: 'Bach',
-    cover: 'piano.webp'
-  },
-  {
-    src: 'Bach - Invention No. 10.mp3',
-    title: 'Invention No. 10',
-    artist: 'Bach',
-    cover: 'piano.webp'
-  },  
-  {
-    src: 'Bach - Invention No. 13.mp3',
-    title: 'Invention No. 13',
-    artist: 'Bach',
-    cover: 'piano.webp'
-  },
-];
 
 // =======================
 // 🎛 CONTROLS
@@ -83,7 +63,7 @@ function Playlist({ tracks, currentIndex, onSelect }) {
           className={"track " + (index === currentIndex ? "active" : "")}
           onClick={() => onSelect(index)}
         >
-          {track.title} - {track.artist}
+          {track.track} - {track.title}
         </div>
       ))}
     </div>
@@ -172,7 +152,7 @@ function Player() {
 
     navigator.mediaSession.metadata = new MediaMetadata({
       title: track.title,
-      artist: track.artist
+      track: track.track
     });
 
     navigator.mediaSession.setActionHandler("play", togglePlay);
@@ -193,8 +173,8 @@ function Player() {
 
       <div className="player">
         <img src={track.cover}></img>
-        <h2>{track.title}</h2>
-        <p>{track.artist}</p>
+        <h2>Piste {track.track}</h2>
+        <h3>{track.title}</h3>
 
         <Controls
           isPlaying={isPlaying}
