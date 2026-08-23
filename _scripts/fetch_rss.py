@@ -44,19 +44,23 @@ def extract_summary(entry):
         return summary
     return clean_summary(entry["content"][0]["value"])
 
-feed = feedparser.parse(FEED_URL)
+if __name__ == "__main__":
+    with open(OUTPUT, "r", encoding="utf-8") as f:
+        posts = json.load(f)
 
-posts = []
+    feed = feedparser.parse(FEED_URL)
 
-for entry in feed.entries[:10]:
-    posts.append({
-        "title": entry.title,
-        "subtitle": extract_subtitle(entry),
-        "summary": extract_summary(entry),
-        "url": entry.link,
-        "image": extract_image(entry),
-        "pubDate": extract_date(entry),
-    })
+    for entry in feed.entries[:10]:
+        if entry.title in [post["title"] for post in posts]:
+            continue  # Skip if the post already exists
+        posts.append({
+            "title": entry.title,
+            "subtitle": extract_subtitle(entry),
+            "summary": extract_summary(entry),
+            "url": entry.link,
+            "image": extract_image(entry),
+            "pubDate": extract_date(entry),
+        })
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(posts, f, ensure_ascii=False, indent=2)
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(posts, f, ensure_ascii=False, indent=2)
