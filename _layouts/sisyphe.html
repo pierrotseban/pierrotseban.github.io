@@ -1,0 +1,238 @@
+---
+layout: oeuvre
+---
+
+<style>
+  /* ---- Styles scopés au livre "Sisyphe délivré ?" ---- */
+  .sisyphe-page {
+    max-width: 100%;
+  }
+
+  .sisyphe-breadcrumb {
+    font-size: x-large;
+    /* margin-bottom: 0; */
+  }
+  .sisyphe-breadcrumb a {
+    color: #936f94;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sisyphe-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .sisyphe-breadcrumb .sep {
+    color: #888;
+    margin: 0 6px;
+  }
+
+  .sisyphe-page h1 {
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .sisyphe-subtitle {
+    font-weight: normal;
+    font-style: italic;
+    color: #5a5a5a;
+    margin-top: 0;
+  }
+
+  .sisyphe-page h3.section-title {
+    font-style: italic;
+    margin-top: 2.2em;
+    border-bottom: 1px solid #d8c3af;
+    padding-bottom: 4px;
+  }
+
+  .sisyphe-page p::first-letter {
+    /* laisser sobre : pas de lettrine sur chaque paragraphe */
+  }
+
+  .sisyphe-page sup.fnmark a {
+    color: #936f94;
+    text-decoration: none;
+    border-bottom: 1px dotted #936f94;
+    padding: 0 1px;
+  }
+  .sisyphe-page sup.fnmark a:hover {
+    color: #5c3f5d;
+  }
+
+  .sisyphe-premises {
+    margin: 1.2em 0 1.4em;
+    padding: 0.8em 1.1em;
+    background-color: #fdeee0d8;
+    border-left: 3px solid #936f94;
+  }
+  .sisyphe-premises .row {
+    display: flex;
+    gap: 0.6em;
+    margin-bottom: 0.4em;
+  }
+  .sisyphe-premises .row:last-child { margin-bottom: 0; }
+  .sisyphe-premises .label {
+    font-weight: 600;
+    flex: 0 0 auto;
+  }
+
+  .sisyphe-argument {
+    margin: 1.2em 0 1.4em;
+    padding: 0.8em 1.1em;
+    background-color: #f4ede4;
+    border: 1px solid #e0d2c0;
+  }
+  .sisyphe-argument p { margin: 0 0 0.4em; }
+  .sisyphe-argument p:last-child { margin-bottom: 0; }
+  .sisyphe-argument .tag {
+    font-weight: 600;
+    margin-right: 0.5em;
+  }
+
+  .sisyphe-page blockquote cite {
+    display: block;
+    margin-top: 0.5em;
+    font-style: normal;
+    font-size: smaller;
+    color: #5a5a5a;
+  }
+
+  .sisyphe-diagram {
+    margin: 1.4em 0;
+    padding: 1em;
+    background-color: #f4ede4;
+    border: 1px solid #e0d2c0;
+    text-align: center;
+  }
+  .sisyphe-diagram svg { max-width: 100%; height: auto; }
+  .sisyphe-diagram .cap {
+    font-size: smaller;
+    color: #5a5a5a;
+    margin: 0.6em 0 0;
+  }
+
+  .sisyphe-page hr.sep {
+    border: none;
+    text-align: center;
+    margin: 2em auto;
+  }
+  .sisyphe-page hr.sep::before {
+    content: "❦";
+    color: #936f94;
+  }
+
+  .small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  .sisyphe-glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em 2.2em;
+    margin-top: 1em;
+  }
+  .sisyphe-glossary-grid div {
+    padding: 0.35em 0;
+    border-bottom: 1px solid #e0d2c0;
+    width: 260px;
+  }
+
+  .sisyphe-biblio {
+    list-style: none;
+    margin: 1.2em 0 0;
+    padding: 0;
+  }
+  .sisyphe-biblio li {
+    padding: 0.6em 0;
+    border-bottom: 1px solid #e0d2c0;
+    font-size: 95%;
+  }
+
+  /* ---- Notes de fin de chapitre ---- */
+  .sisyphe-notes {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 2px solid #444;
+  }
+  .sisyphe-notes h2 {
+    font-size: large;
+  }
+  .sisyphe-notes ol {
+    padding-left: 1.3em;
+    font-size: small;
+    color: #4a4a4a;
+  }
+  .sisyphe-notes li {
+    margin-bottom: 0.6em;
+  }
+  .sisyphe-notes a.back {
+    color: #936f94;
+    text-decoration: none;
+    margin-left: 0.3em;
+  }
+
+  /* ---- Navigation de chapitre ---- */
+  .sisyphe-chapternav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #bbb;
+    font-size: 95%;
+  }
+  .sisyphe-chapternav a {
+    color: #936f94;
+    text-decoration: none;
+  }
+  .sisyphe-chapternav a:hover { text-decoration: underline; }
+  .sisyphe-chapternav .sisyphe-next { margin-left: auto; text-align: right; }
+  .sisyphe-chapternav .sisyphe-toc { color: #5a5a5a; }
+
+  /* ---- Table des matières (page d'accueil) ---- */
+  .sisyphe-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 2em;
+  }
+  .sisyphe-toc-list li {
+    border-bottom: 1px solid #e0d2c0;
+  }
+  .sisyphe-toc-list a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6em 0.2em;
+    color: #2b2b2b;
+    text-decoration: none;
+  }
+  .sisyphe-toc-list a:hover {
+    background-color: #fdeee0d8;
+  }
+  .sisyphe-toc-list .toc-num {
+    color: #936f94;
+    font-weight: 600;
+    margin-right: 0.8em;
+  }
+  .sisyphe-toc-list.toc-annexes {
+    margin-top: -1em;
+  }
+</style>
+
+<div class="sisyphe-page">
+  <p class="sisyphe-breadcrumb">
+    <a href="/oeuvres/sisyphe/">Sisyphe délivré ?</a>{% if page.chapternum %}<span class="sep">·</span>{{ page.chapternum }}{% endif %}
+  </p>
+
+  <h1>{{ page.title }}</h1>
+  {% if page.subtitle %}<h3 class="sisyphe-subtitle">{{ page.subtitle }}</h3>{% endif %}
+
+  {{ content }}
+
+  {% if page.prev or page.next %}
+  <nav class="sisyphe-chapternav">
+    {% if page.prev %}<a class="sisyphe-prev" href="{{ page.prev }}">← {{ page.prevlabel }}</a>{% else %}<span></span>{% endif %}
+    <a class="sisyphe-toc" href="/oeuvres/sisyphe/">Sommaire</a>
+    {% if page.next %}<a class="sisyphe-next" href="{{ page.next }}">{{ page.nextlabel }} →</a>{% endif %}
+  </nav>
+  {% endif %}
+</div>
