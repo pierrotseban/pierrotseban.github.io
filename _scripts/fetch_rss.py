@@ -50,17 +50,28 @@ if __name__ == "__main__":
 
     feed = feedparser.parse(FEED_URL)
 
-    for entry in feed.entries[:10]:
-        if entry.title in [post["title"] for post in posts]:
-            continue  # Skip if the post already exists
-        posts.append({
+    new_entries = [{
             "title": entry.title,
             "subtitle": extract_subtitle(entry),
             "summary": extract_summary(entry),
             "url": entry.link,
             "image": extract_image(entry),
             "pubDate": extract_date(entry),
-        })
+        } for entry in feed.entries[:10] if entry.title not in [post["title"] for post in posts]]
+
+    posts = new_entries + posts
+
+    # for entry in feed.entries[:10]:
+    #     if entry.title in [post["title"] for post in posts]:
+    #         continue  # Skip if the post already exists
+    #     posts.insert(0, {
+    #         "title": entry.title,
+    #         "subtitle": extract_subtitle(entry),
+    #         "summary": extract_summary(entry),
+    #         "url": entry.link,
+    #         "image": extract_image(entry),
+    #         "pubDate": extract_date(entry),
+    #     })
 
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(posts, f, ensure_ascii=False, indent=2)
