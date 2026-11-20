@@ -38,9 +38,9 @@ id: blog
       <p class="summary">{{ post.summary | strip_html | truncate: 200 }}</p>
       <div class="authorcard">
         <div class="authorpicture">
-            <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
-              <img src="assets/images/antinomistesubstack.jpg">
-            </a>
+          <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+            <img src="assets/images/antinomistesubstack.jpg">
+          </a>
         </div>
         <div class="authorlink">
           <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
@@ -66,10 +66,10 @@ id: blog
     </div>
     <div class="substack">
       <a target="_blank" href="{{ post.url }}">
-          <img src="assets/images/SubstackIcon.png">
+        <img src="assets/images/SubstackIcon.png">
       </a>
       <a target="_blank" href="{{ post.url }}">
-          Lire sur Substack
+        Lire sur Substack
       </a>
     </div>
   </div>
@@ -78,19 +78,19 @@ id: blog
 
 <h2> D'autres articles : </h2>
 <div style="display: flex; flex-wrap: wrap; text-align: center;">
-  
+
   {% assign subset = site.data.posts | slice: new_posts, 100 %}
   {% assign random_blogposts = subset | randomize %}
   {% for post in random_blogposts limit:3 %}
   <div class="card">
     {% if post.image %}
-    <a class="postimage" href="{{ post.url }}">
+    <a class="postimage" href="{{ post.url }}" target="_blank">
       <img src="{{ post.image }}" alt="{{ post.title }}">
     </a>
     {% endif %}
 
     <div class="content">
-      <a class="title" href="{{ post.url }}">
+      <a class="title" href="{{ post.url }}" target="_blank">
         {{ post.title }}
       </a>
       {% if post.subtitle %}
@@ -99,9 +99,9 @@ id: blog
       <p class="summary">{{ post.summary | strip_html | truncate: 200 }}</p>
       <div class="authorcard">
         <div class="authorpicture">
-            <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
-              <img src="assets/images/antinomistesubstack.jpg">
-            </a>
+          <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
+            <img src="assets/images/antinomistesubstack.jpg">
+          </a>
         </div>
         <div class="authorlink">
           <a href="https://substack.com/@antinomiste?utm_content=embedded-post" target="_blank">
@@ -127,10 +127,10 @@ id: blog
     </div>
     <div class="substack">
       <a target="_blank" href="{{ post.url }}">
-          <img src="assets/images/SubstackIcon.png">
+        <img src="assets/images/SubstackIcon.png">
       </a>
       <a target="_blank" href="{{ post.url }}">
-          Lire sur Substack
+        Lire sur Substack
       </a>
     </div>
   </div>
